@@ -1,8 +1,9 @@
-1)Jeff-Bezos-56-male-97000
-2)Elon-Musk-21-male-100000
-3)Bill-Gates-66-male-90000
-4)Yelena-Goal-24-female-40000
-5)Taylor-Swift-33-female-70000
-6)Adriana-Lima-50-female-40000
-7)Lionel-Messi-35-male-80000
-8)Kylian-Embappe-23-male-90000
+1)Robert-Downey-57-male-300000
+2)Scarlett-Johansson-37-female-140000
+3)Chris-Hemsworth-38-male-90000
+4)Mark-Ruffalo-54-male-90000
+5)Jeremy-Renner-51-male-50000
+6)Paul-Rudd-53-male-30000
+7)Chris-Pratt-43-male-40000
+8)Brie-Larsson-32-female-10000
+9)Chadwick-Boseman-44-male-1000010)Tom-Holland-26-male-4000

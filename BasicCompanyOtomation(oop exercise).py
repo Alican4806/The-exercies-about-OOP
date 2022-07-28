@@ -1,3 +1,8 @@
+import re
+
+from pyparsing import ParseSyntaxException
+
+
 class Company():
     def __init__(self,companyName):
         self.companyName = companyName
@@ -54,7 +59,7 @@ class Company():
         
         with open('employee.txt','r') as file:
             showingEmployee = file.readlines()
-            print(showingEmployee)
+            # print(showingEmployee)
         if len(showingEmployee)==0:
             id = 1
         else:
@@ -78,7 +83,7 @@ class Company():
     def deleteStaff(self):
         with open('employee.txt','r') as file:
             employees = file.readlines()
-            print(employees)
+            # print(employees)
             
         cEmployee = []    
         for employee in employees:
@@ -93,7 +98,7 @@ class Company():
         employees.pop(number-1) 
         
         for eemployee in employees:
-            print(eemployee.strip())   
+            # here = eemployee.strip()
             
             
             cEmployee.append(eemployee.split(')')[1])
@@ -103,6 +108,8 @@ class Company():
         for employeeee in cEmployee:
             id+=1
             xEmployee.append(f'{id}){employeeee}')
+        for again in xEmployee:
+            print(again)
         # print(xEmployee)
         with open('employee.txt','w') as file:
             file.writelines(xEmployee)
@@ -110,26 +117,27 @@ class Company():
             
     def showSalary(self,choice):
         self.choice = choice
-        print('It is working')
+        # print('It is working')
         with open('employee.txt','r') as file:
             employeess = file.readlines()
-        print(employeess)
+        # print(employeess)
         sumSalary = []
             
         for employeei in employeess:
             sumSalary.append(int(employeei.split('-')[-1]))
         if self.choice == 'm':
-            with open('Expenses.txt','a+') as file:
-                file.writelines(str(sum(sumSalary))+'\n')
-                print(f'You have to give salary this month :{sum(sumSalary)}')
-        elif self.choice == 'y':
+            sumv=sum(sumSalary)
             with open('Expenses.txt','w') as file:
-                file.writelines(str(12*sum(sumSalary))+'\n')
-                print(f'You have to give salary this year :{(12*sum(sumSalary))}')
-        # print(f'You have to give salary this month :{sum(sumSalary)}')
-        # with open('Expenses.txt','a+') as file:
-        #     file.writelines(str(sum(sumSalary)))
-
+                file.writelines(str(sumv)+'\n')
+                print(f'You have to give salary this month :{sumv}')
+                
+        elif self.choice == 'y':
+            sumv = (12*sum(sumSalary))
+            with open('Expenses.txt','w') as file:
+                file.writelines(str(sumv)+'\n')
+                print(f'You have to give salary this year :{sumv}')
+        return sumv
+        
             
          
                 
@@ -147,16 +155,34 @@ class Company():
                 
         
     
-    def paySalary(self,account ='a'):
-        """ account: if account is a"""
-        pass
-    
-    def showExpense(self):
-        print('çalışıyor')
+    def paySalary(self):
+        with open('budget.txt','r') as file:
+            pay = file.readlines()[0]
+            paySalary1 =int(pay)
+        with open('Expenses.txt','r') as file:
+            expense = int(file.readlines()[0])
+        FinalPay =  paySalary1 - expense
+        with open('budget.txt','w') as file:
+            file.writelines(str(FinalPay))
+        print(FinalPay)
+        return paySalary1
+        
+        
+        
+    def showExpense(self): 
+        otherExpense = int(input('Please enter the sum of the another expense: '))
+        with open('Expenses.txt','r') as file:
+            expense = int(file.readlines()[0])
+        sumExpense = expense+otherExpense
+        print(f'Sum of the expenses is {sumExpense}')  
+            
     
     def earnings(self):
-        pass
-    
+        earn = int(input('Please enter the earnings of the company:\n'))
+        with open('earnings.txt','w') as file:
+            file.writelines(str(earn))
+        print(f'Sum of the earning is {earn}')
+        return earn
     
     # the name of the company
 company = Company('Alican Kaplancı') 
@@ -164,12 +190,3 @@ company = Company('Alican Kaplancı')
 while company.work:
     company.program()
     
-# 1)Jeff-Bezos-56-male-97000
-# 2)Alican-Kaplanc�-21-male-65000
-# 3)Elon-Musk-21-male-100000
-# 4)Bill-Gates-66-male-90000
-# 5)Jeff-Bezos-56-male-97000
-# 6)Alican-Kaplanc�-21-male-65000
-# 7)Yelena-Goal-24-female-40000
-# 8)Zeliha-Y�l-54-female-41000
-# 9)Taylor-Swift-33-female-70000
