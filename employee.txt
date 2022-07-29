@@ -6,4 +6,6 @@
 6)Paul-Rudd-53-male-30000
 7)Chris-Pratt-43-male-40000
 8)Brie-Larsson-32-female-10000
-9)Chadwick-Boseman-44-male-1000010)Tom-Holland-26-male-4000
+9)Chadwick-Boseman-44-male-10000
+10)Tom-Holland-26-male-4000
+11)Alican-KAPLANCI-21-MALE-21000

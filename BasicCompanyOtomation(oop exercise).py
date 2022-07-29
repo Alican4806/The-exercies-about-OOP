@@ -137,19 +137,7 @@ class Company():
                 file.writelines(str(sumv)+'\n')
                 print(f'You have to give salary this year :{sumv}')
         return sumv
-        
-            
-         
-                
-            
-            
-            
-                
-            
-        
-        
-        
-          
+             
             
             
                 
